@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atelier de vélo Arpin</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --orange-lightest: #FFF4EC;
+      --orange-light: #FFE0C8;
+      --orange-mid: #F5C4A0;
+      --orange-warm: #E8A070;
+      --orange-deep: #C96A2A;
+      --orange-dark: #7A3A10;
+      --gray-dark: #1E1C1A;
+      --gray-mid: #3A3632;
+      --text-dark: #2C2219;
+      --text-muted: #7A6A5A;
+      --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      color: var(--text-dark);
+      background: var(--orange-lightest);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ───────────────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100svh;
+    }
+
+    .hero__image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      aspect-ratio: 4/3;
+      filter: brightness(0.95);
+    }
+
+    .hero__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 5rem 4rem 4.5rem;
+      background: var(--white);
+    }
+
+    .hero__subtitle {
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.5rem;
+      font-family: Garamond;
+      color: var(--orange-deep);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero__title {
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--text-dark);
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+      font-family: Garamond;
+    }
+
+    .hero__title span {
+      color: var(--orange-deep);
+    }
+
+    .hero__paragraph {
+      font-size: 1rem;
+      color: black;
+      max-width: 36ch;
+      line-height: 1.75;
+    }
+
+    .hero__divider {
+      width: 40px;
+      height: 2px;
+      background: var(--orange-warm);
+      margin-bottom: 1.6rem;
+
+    }
+
+    /* ── SERVICES ───────────────────────────────────────────── */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .service {
+      padding: 9rem 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .service--1 { background: #FFE9D5; }
+    .service--2 { background: #F5C8A2; }
+    .service--3 { background: #E8A870;}
+
+    .service__price {
+      font-size: 2.6rem;
+      font-family: Garamond;
+      font-weight: 500;
+      color: var(--text-dark);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .service__price span {
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 0;
+      color: var(--text-muted);
+    }
+
+    .service__divider {
+      width: 30px;
+      height: 1.5px;
+      background: var(--orange-dark);
+      opacity: 0.35;
+    }
+
+    .service__subtitle {
+      
+      font-weight: 300;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      line-height: 1.3;
+      font-family: Garamond;
+    }
+
+    .service__paragraph {
+      font-size: 1rem;
+      color: black;
+      line-height: 1.75;
+    }
+
+    .service--3 .service__price,
+    .service--3 .service__subtitle { color: #2C2219; }
+
+    .service--3 .service__paragraph { color: black; }
+    .service--3 .service__divider { opacity: 0.4; background: #5A3C22; }
+
+    /* ── QUOTE ──────────────────────────────────────────────── */
+    .quote {
+      padding: 10rem 2rem;
+      text-align: center;
+      background: var(--orange-lightest);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.4rem;
+    }
+
+
+    .quote__icon {
+      font-size: 3rem;
+      color: var(--orange-warm);
+      opacity: 0.6;
+      line-height: 1;
+    }
+
+    .quote__text {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-family: Garamond;
+      font-weight: 300;
+      max-width: 55ch;
+      line-height: 1.65;
+      color: var(--text-dark);
+      letter-spacing: 0.01em;
+    }
+
+    .quote__author {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange-deep);
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      background: var(--gray-dark);
+      color: #C0B4A8;
+      text-align: center;
+      padding: 5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    footer .footer__name {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #F0E8E0;
+      font-family: Garamond;
+      margin-bottom: 0.2rem;
+    }
+
+    footer .footer__address,
+    footer .footer__contact {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #8A7E74;
+    }
+
+    footer .footer__copy {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #5A5048;
+      margin-top: 1.2rem;
+    }
+
+    footer .footer__designed {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #5A5048;
+    }
+
+    footer .footer__designed span {
+      color: var(--orange-warm);
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero__image {
+        height: 70vw;
+        min-height: 260px;
+        max-height: 480px;
+      }
+
+      .hero__image img {
+        aspect-ratio: unset;
+        height: 100%;
+      }
+
+      .hero__content {
+        padding: 2.5rem 1.8rem 3rem;
+      }
+
+      .hero__subtitle {
+        font-size: 1.2rem;
+      }
+
+      .hero__paragraph {
+        max-width: 100%;
+        font-size: 0.95rem;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .service {
+        padding: 3rem 1.8rem;
+      }
+
+      .service__price {
+        font-size: 2.2rem;
+      }
+
+      .service__subtitle {
+        font-size: 1.3rem;
+      }
+
+      .quote {
+        padding: 5rem 1.8rem;
+      }
+
+      .quote__text {
+        font-size: 1.4rem;
+      }
+
+      footer {
+        padding: 3.5rem 1.5rem;
+      }
+
+      footer .footer__address,
+      footer .footer__contact,
+      footer .footer__copy,
+      footer .footer__designed {
+        font-size: 0.88rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero__title {
+        font-size: 1.85rem;
+        line-height: 1.25;
+      }
+
+      .hero__subtitle {
+        font-size: 1.05rem;
+      }
+
+      .hero__content {
+        padding: 2rem 1.4rem 2.5rem;
+      }
+
+      .service {
+        padding: 2.5rem 1.4rem;
+      }
+
+      .quote {
+        padding: 4rem 1.4rem;
+      }
+
+      .quote__text {
+        font-size: 1.25rem;
+      }
+
+      footer {
+        padding: 3rem 1.2rem;
+        gap: 0.4rem;
+      }
+    }
+
+    a {
+      color: var(--orange-deep);
+      text-decoration: underline;
+    }
+
+    /* ── ANIMATIONS ─────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .hero__image {
+      animation: fadeIn 0.9s ease both;
+    }
+
+    .hero__subtitle {
+      animation: fadeUp 0.7s ease both;
+      animation-delay: 0.15s;
+    }
+
+    .hero__divider {
+      animation: fadeUp 0.7s ease both;
+      animation-delay: 0.25s;
+    }
+
+    .hero__title {
+      animation: fadeUp 0.7s ease both;
+      animation-delay: 0.35s;
+    }
+
+    .hero__paragraph {
+      animation: fadeUp 0.7s ease both;
+      animation-delay: 0.5s;
+    }
+
+    .service--1 { animation: fadeUp 0.7s ease both; animation-delay: 0.1s; }
+    .service--2 { animation: fadeUp 0.7s ease both; animation-delay: 0.25s; }
+    .service--3 { animation: fadeUp 0.7s ease both; animation-delay: 0.4s; }
+
+    .quote__icon   { animation: fadeUp 0.7s ease both; }
+    .quote__text   { animation: fadeUp 0.7s ease both; animation-delay: 0.15s; }
+    .quote__author { animation: fadeUp 0.7s ease both; animation-delay: 0.25s; }
+
+    footer { animation: fadeIn 0.8s ease both; }
+
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__image">
+      <img
+        src="/Users/sebhamdy/Downloads/Atelier Arpin (3000 x 3750 px).jpg"
+        alt="Atelier de vélo Arpin"
+      />
+    </div>
+    <div class="hero__content">
+      <p class="hero__subtitle">Atelier de vélo Arpin</p>
+      <div class="hero__divider"></div>
+      <h1 class="hero__title">Entretien de vélos à <br><span>l'Île-des-Soeurs.</span></h1>
+      <p class="hero__paragraph">
+        Salut 👋! Je m'appelle Alexis Arpin et j'offre des services d'entretien et de réparation de vélos à l'Île-des-Soeurs. Je suis situé au 70 rue de l'Orée-du-Bois O, dans la Pointe Sud de l'Île. <br><br>Pour prendre rendez-vous, veuillez me contacter par téléphone au <span style="color: var(--orange-deep);">514-757-4355</span>, par courriel au <span style="color: var(--orange-deep);">atelier.arpin@gmail.com</span> ou sur <a href="https://www.facebook.com/profile.php?id=100094515423649">Facebook</a>.<br><br>À bientôt!
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="service service--1">
+      <div class="service__price">49 <span>$</span></div>
+      <div class="service__divider"></div>
+      <p class="service__subtitle">Entretien de base</p>
+      <p class="service__paragraph">Inspection générale du vélo, réglage des freins et des vitesses, lubrification de la chaîne, et vérification de la pression des pneus. Idéal pour garder votre vélo en bon état entre les sorties.</p>
+    </div>
+    <div class="service service--2">
+      <div class="service__price">99 <span>$</span></div>
+      <div class="service__divider"></div>
+      <p class="service__subtitle">Entretien intermédiaire</p>
+      <p class="service__paragraph">Ajustement des roulements, nettoyage complet de la transmission à l'ultrasonique, remplacement de tous les cables, vitesses, et freins, alignement des roues, plus tout ce qui est inclus dans la mise au point de base. Une excellente option pour assurer une performance optimale.</p>
+    </div>
+    <div class="service service--3">
+      <div class="service__price">149 <span>$</span></div>
+      <div class="service__divider"></div>
+      <p class="service__subtitle">Entretien complet</p>
+      <p class="service__paragraph">Démontage complet du vélo pour un nettoyage détaillé, inspection et remplacement des pièces usées, et réglage précis de chaque composante pour une conduite comme neuve.</p>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote">
+    <span class="material-icons-round quote__icon">format_quote</span>
+    <p class="quote__text">Un jeune mécanicien consciencieux et super sympathique!</p>
+    <p class="quote__author">Nancy</p>
+    <p style="font-size: 0.75rem; opacity: 0.6;">Commentaire Facebook, juin 2024.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer__name">Atelier de vélo Arpin</p>
+    <p class="footer__address">70 rue de l'Orée-du-Bois O, Verdun, QC</p>
+    <p class="footer__contact">atelier.arpin@gmail.com &nbsp;·&nbsp; (514) 757-4355</p>
+    <p class="footer__copy">© 2026 Atelier de vélo Arpin. Fait avec <span style="color: var(--orange-warm);">♥</span></p>
+    <p class="footer__designed">Design web par <span><a href="https://sebastienhamdy.ca">Sébastien H.</a></span></p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      // Elements that should animate on scroll (not on initial load)
+      const scrollEls = document.querySelectorAll(
+        '.service--1, .service--2, .service--3, .quote__icon, .quote__text, .quote__author'
+      );
+
+      scrollEls.forEach(el => {
+        el.style.animationPlayState = 'paused';
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>

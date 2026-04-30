@@ -104,7 +104,6 @@
       height: 2px;
       background: var(--orange-warm);
       margin-bottom: 1.6rem;
-
     }
 
     /* ── SERVICES ───────────────────────────────────────────── */
@@ -148,7 +147,6 @@
     }
 
     .service__subtitle {
-      
       font-weight: 300;
       font-size: 1.5rem;
       color: var(--text-dark);
@@ -178,7 +176,6 @@
       align-items: center;
       gap: 1.4rem;
     }
-
 
     .quote__icon {
       font-size: 3rem;
@@ -287,6 +284,10 @@
         padding: 3rem 1.8rem;
       }
 
+      .service__paragraph {
+        max-width: 52ch;
+      }
+
       .service__price {
         font-size: 2.2rem;
       }
@@ -367,6 +368,12 @@
       animation: fadeIn 0.9s ease both;
     }
 
+    /* Profile photo animates in just before the subtitle */
+    .hero__avatar {
+      animation: fadeUp 0.7s ease both;
+      animation-delay: 0.05s;
+    }
+
     .hero__subtitle {
       animation: fadeUp 0.7s ease both;
       animation-delay: 0.15s;
@@ -405,11 +412,18 @@
   <section class="hero">
     <div class="hero__image">
       <img
-        src="pexels-thatguycraig000-1835897.jpg"
+        src="bike.jpg"
         alt="Atelier de vélo Arpin"
       />
     </div>
     <div class="hero__content">
+      <img
+        class="hero__avatar"
+        src="alexis.png"
+        width="65px"
+        height="65px"
+        style="border-radius: 50%; margin-bottom: 1.25rem;"
+      >
       <p class="hero__subtitle">Atelier de vélo Arpin</p>
       <div class="hero__divider"></div>
       <h1 class="hero__title">Entretien de vélos à <br><span>l'Île-des-Soeurs.</span></h1>
@@ -469,7 +483,6 @@
         });
       }, { threshold: 0.15 });
 
-      // Elements that should animate on scroll (not on initial load)
       const scrollEls = document.querySelectorAll(
         '.service--1, .service--2, .service--3, .quote__icon, .quote__text, .quote__author'
       );

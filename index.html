@@ -106,6 +106,51 @@
       margin-bottom: 1.6rem;
     }
 
+    /* ── BOOKING BUTTON ─────────────────────────────────────── */
+    .btn-booking {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.75rem;
+      padding: 0.75rem 1.4rem 0.75rem 1.6rem;
+      background: linear-gradient(135deg, #E8853A 0%, #C96A2A 60%, #A85520 100%);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(201, 106, 42, 0.30);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      align-self: flex-start;
+    }
+
+    .btn-booking:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201, 106, 42, 0.40);
+      filter: brightness(1.07);
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .btn-booking:active {
+      transform: translateY(0);
+      box-shadow: 0 3px 10px rgba(201, 106, 42, 0.30);
+      filter: brightness(0.97);
+    }
+
+    .btn-booking .material-icons-round {
+      font-size: 1.1rem;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-booking:hover .material-icons-round {
+      transform: translateX(3px);
+    }
+
     /* ── SERVICES ───────────────────────────────────────────── */
     .services {
       display: grid;
@@ -276,6 +321,11 @@
         font-size: 0.95rem;
       }
 
+      .btn-booking {
+        align-self: flex-start;
+        font-size: 0.92rem;
+      }
+
       .services {
         grid-template-columns: 1fr;
       }
@@ -346,6 +396,11 @@
         padding: 3rem 1.2rem;
         gap: 0.4rem;
       }
+
+      .btn-booking {
+        width: 100%;
+        justify-content: center;
+      }
     }
 
     a {
@@ -368,7 +423,6 @@
       animation: fadeIn 0.9s ease both;
     }
 
-    /* Profile photo animates in just before the subtitle */
     .hero__avatar {
       animation: fadeUp 0.7s ease both;
       animation-delay: 0.05s;
@@ -392,6 +446,11 @@
     .hero__paragraph {
       animation: fadeUp 0.7s ease both;
       animation-delay: 0.5s;
+    }
+
+    .btn-booking {
+      animation: fadeUp 0.7s ease both;
+      animation-delay: 0.6s;
     }
 
     .service--1 { animation: fadeUp 0.7s ease both; animation-delay: 0.1s; }
@@ -430,13 +489,22 @@
       <p class="hero__paragraph">
         Salut 👋! Je m'appelle Alexis Arpin et j'offre des services d'entretien et de réparation de vélos à l'Île-des-Soeurs. Je suis situé au 70 rue de l'Orée-du-Bois O, dans la Pointe Sud de l'Île. <br><br>Pour prendre rendez-vous, veuillez me contacter par téléphone au <span style="color: var(--orange-deep);">514-757-4355</span>, par courriel au <span style="color: var(--orange-deep);">atelier.arpin@gmail.com</span> ou sur <a href="https://www.facebook.com/profile.php?id=100094515423649">Facebook</a>.<br><br>À bientôt!
       </p>
+      <a
+        class="btn-booking"
+        href="https://calendly.com/grassyou1/30min?fbclid=IwZXh0bgNhZW0CMTAAAR10Wt3K-e3P0l-lnwLh5VmPAUHf0KLak9eJJxqACyIyYvkYskonIXu_lts_aem_ZmFrZWR1bW15MTZieXRlcw&month=2024-05"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Prendre rendez-vous
+        <span class="material-icons-round">arrow_forward</span>
+      </a>
     </div>
   </section>
 
   <!-- SERVICES -->
   <section class="services">
     <div class="service service--1">
-      <div class="service__price">49 <span>$</span></div>
+      <div class="service__price">45 <span>$</span></div>
       <div class="service__divider"></div>
       <p class="service__subtitle">Entretien de base</p>
       <p class="service__paragraph">Inspection générale du vélo, réglage des freins et des vitesses, lubrification de la chaîne, et vérification de la pression des pneus. Idéal pour garder votre vélo en bon état entre les sorties.</p>

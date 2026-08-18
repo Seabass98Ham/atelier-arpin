@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atelier de vélo Arpin</title>
+  <meta name="description" content="Entretien et réparation de vélos à l'Île-des-Sœurs. À partir de 45 $ — prenez rendez-vous facilement en ligne.">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__image">
+      <img
+        src="collage-3.jpg"
+        alt="Photos d'Alexis Arpin (le propriétaire et mécanicien de l'atelier) à l'oeuvre."
+      />
+    </div>
+    <div class="hero__content">
+      
+      <p class="hero__subtitle">Atelier de vélo Arpin</p>
+      <div class="hero__divider"></div>
+      <h1 class="hero__title">Bike maintenance on <br><span>Nun's Island</span></h1>
+      <p class="hero__paragraph">
+        
+        Hi 👋! My name is Alexis Arpin and I offer bike repair and maintenance 
+        services on Nun's Island. I am located at 70 rue de l'Orée-du-Bois O, 
+        in the south end of the island. <br><br>To take an appointment, 
+        please contact me by phone at <span style="color: var(--orange-deep);">514-757-4355</span>, 
+        by email at <span style="color: var(--orange-deep);"><a href="mailto:atelier.arpin@gmail.com">atelier.arpin@gmail.com</a></span>, 
+        on <a href="https://www.facebook.com/profile.php?id=100094515423649">Facebook</a> or via the button below. <br><br>See you soon!
+      
+      </p>
+      <a
+        class="btn-booking"
+        href="https://calendly.com/grassyou1/30min?fbclid=IwZXh0bgNhZW0CMTAAAR10Wt3K-e3P0l-lnwLh5VmPAUHf0KLak9eJJxqACyIyYvkYskonIXu_lts_aem_ZmFrZWR1bW15MTZieXRlcw&month=2024-05"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Take an appointment
+        <span class="material-icons-round">arrow_forward</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="service service--1">
+      <div class="service__price">45 <span>$</span></div>
+      <div class="service__divider"></div>
+      <p class="service__subtitle">Basic Maintenance</p>
+      <p class="service__paragraph">
+        
+        General inspection of the bicycle, adjustment of the brakes and speeds, 
+        chain lubrification, and verification of tire pressure. 
+        Ideal to keep your bike in a good state in between rides.
+      
+      </p>
+    </div>
+    <div class="service service--2">
+      <div class="service__price">99 <span>$</span></div>
+      <div class="service__divider"></div>
+      <p class="service__subtitle">Intermediate Maintenance</p>
+      <p class="service__paragraph">
+        
+        Adjustment of rollings, complete ultrasonic cleaning of the transmission, 
+        replacement of all cables, chains and brakes, 
+        alignment of wheels, plus everything that is included in the basic maintenance tier. 
+        An excellent option to maintain optimal performance.
+      
+      </p>
+    </div>
+    <div class="service service--3">
+      <div class="service__price">149 <span>$</span></div>
+      <div class="service__divider"></div>
+      <p class="service__subtitle">Complete Maintenance</p>
+      <p class="service__paragraph">
+        
+        Complete dismantling of the bicycle for a detailed cleaning, inspection and replacement
+        of used parts, and precise adjustment of each component for like-new riding.
+      
+      </p>
+    
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote">
+    <span class="material-icons-round quote__icon">format_quote</span>
+    <p class="quote__text">A young, friendly and conscientious mechanic!</p>
+    <p class="quote__author">Nancy</p>
+    <p style="font-size: 0.75rem; opacity: 0.6;">Facebook Comment, June 2024.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer__name">Atelier de vélo Arpin</p>
+    <p class="footer__address">70 rue de l'Orée-du-Bois O, Verdun, QC</p>
+    <p class="footer__contact"><span><a href="mailto:atelier.arpin@gmail.com">atelier.arpin@gmail.com</a></span> &nbsp;·&nbsp; (514) 757-4355</p>
+    <p class="footer__copy">© 2026 Atelier de vélo Arpin. Made with <span style="color: var(--orange-warm);">♥</span></p>
+    <p class="footer__designed">Designed by <span><a href="https://www.linkedin.com/in/s%C3%A9bastien-h-a75829300/">Sébastien H.</a></span></p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      const scrollEls = document.querySelectorAll(
+        '.service--1, .service--2, .service--3, .quote__icon, .quote__text, .quote__author'
+      );
+
+      scrollEls.forEach(el => {
+        el.style.animationPlayState = 'paused';
+        observer.observe(el);
+      });
+    });
+  </script>
+  <script data-goatcounter="https://seabass.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -443,3 +443,12 @@ a {
 
 footer { animation: fadeIn 0.8s ease both; }
 
+.language {
+    position: absolute;
+    top: 50px;
+    right: 60px;
+    z-index: 9999;
+    margin: 0;
+}
+
+

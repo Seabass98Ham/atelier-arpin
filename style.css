@@ -380,6 +380,15 @@ footer .footer__designed span {
     .btn-booking {
     width: 100%;
     justify-content: center;
+
+    .language {
+        color: #1E1C1A;
+        background-color: white;
+        border-radius: 500px;
+        padding: 15px 30px;
+        text-decoration: none;
+    }
+
     }
 }
 

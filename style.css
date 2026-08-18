@@ -384,11 +384,7 @@ footer .footer__designed span {
     }
 
     .language {
-        color: #1E1C1A;
-        background-color: white;
-        border-radius: 500px;
-        padding: 15px 30px;
-        text-decoration: none;
+        display: none;
     }
 
 }
